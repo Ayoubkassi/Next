@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <meta />
+        <meta name='keywords' content='ayoubkassi ,ayoub,kassi' />
         <title>Home</title>
       </Head>
       Hey Hey and welocme to EIC .
