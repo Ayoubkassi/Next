@@ -1,43 +1,14 @@
-import { Container, Nav } from 'react-bootstrap';
-import Navbar from 'react-bootstrap/Navbar';
 
 
 export const Navbar = () => {
   return(
-    <>
-  <Navbar bg="dark" variant="dark">
-    <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-  <br />
-  <Navbar bg="primary" variant="dark">
-    <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-
-  <br />
-  <Navbar bg="light" variant="light">
-    <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-</>
+    <div style={{display : 'flex', justifyContent : 'space-between'
+    ,  backgroundColor : 'black', color : 'white' , padding : '0 80px'
+  }}>
+      <h4><a href="/">Home</a></h4>
+      <h4><a href="/about">About</a></h4>
+      <h4>Services</h4>
+      <h4>Contact</h4>
+    </div>
   );
 }
