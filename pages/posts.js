@@ -30,7 +30,7 @@ export default function Home() {
     <div>
       <Head>
         <meta name='keywords' content='ayoubkassi ,ayoub,kassi' />
-        <title>Home</title>
+        <title>Posts</title>
       </Head>
       <div className={styles.main} style={{marginTop : '-80px'}}>
         <h1 style={{ marginBottom : '68px' }}><span style={{ color : 'rgb(45, 206, 224)' }}>Hey Hey and welocme to</span> Posts Page <span style={{ color : 'rgb(45, 206, 224)' }}>.</span></h1>
