@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from '../styles/Layout.module.css';
+import Image from 'next/image'
 
 
 export const Post = () => {
@@ -7,7 +8,6 @@ export const Post = () => {
     <div style={styles.main}>
        <Link href={`/posts/${post.id}`}>{ post.title }</Link>
        <p>{ post.body }</p>
-      <p>Test</p>
     </div>
   );
 }

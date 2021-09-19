@@ -34,9 +34,11 @@ export default function Home() {
       </Head>
       <div className={styles.main} style={{marginTop : '-80px'}}>
         <h1 style={{ marginBottom : '68px' }}><span style={{ color : 'rgb(45, 206, 224)' }}>Hey Hey and welocme to</span> Posts Page <span style={{ color : 'rgb(45, 206, 224)' }}>.</span></h1>
-        {
+        <div style={{ display : 'flex' , flexWrap : 'wrap', alignItems : 'center' , justifyContent : 'space-between' , maxWidth : '80%' }}>
+      {
           posts.length && posts.map((post) =>
-          <div key={post.id}>
+          <div key={post.id} style={{   border: '1px solid #eaeaea',
+            borderRadius: '10px' , maxWidth : '500px' , marginBottom : '20px'}} >
             <Link href={`/posts/${post.id}`}>
               <h3 style={{ textAlign : 'center' , color : 'rgb(45, 206, 224)' , cursor : 'pointer' }}>{ post.title }</h3>
             </Link>
@@ -44,6 +46,7 @@ export default function Home() {
          </div>
         )
         }
+        </div>
       </div>
     </div>
   )
