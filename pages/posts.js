@@ -7,24 +7,26 @@ import Link from 'next/link'
 import axios from 'axios'
 import { Post } from '../components/Post'
 
-export default function Home() {
+export default function Home({ articles }) {
 
   const [ posts , setPosts ] = useState([]);
-  const [loading , setLoading] = useState(false);
-  const getPosts = async () => {
-    try {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-  const data = await response.data;
-  setPosts(data);
-  setLoading(true);
-} catch (error) {
-  console.error(error);
-}
-  }
+//   const [loading , setLoading] = useState(false);
+//   const getPosts = async () => {
+//     try {
+//   const response = await axios.get('https://jsonplaceholder.typicode.com/posts?limit=6');
+//   const data = await response.data;
+//   setPosts(data);
+//   setLoading(true);
+// } catch (error) {
+//   console.error(error);
+// }
+//   }
+//
+//   useEffect(() => {
+//     getPosts();
+// },[loading]);
 
-  useEffect(() => {
-    getPosts();
-},[loading]);
+
 
   return (
     <div>
@@ -36,7 +38,7 @@ export default function Home() {
         <h1 style={{ marginBottom : '68px' }}><span style={{ color : 'rgb(45, 206, 224)' }}>Hey Hey and welocme to</span> Posts Page <span style={{ color : 'rgb(45, 206, 224)' }}>.</span></h1>
         <div style={{ display : 'flex' , flexWrap : 'wrap', alignItems : 'center' , justifyContent : 'space-between' , maxWidth : '80%' }}>
       {
-          posts.length && posts.map((post) =>
+          articles.length && articles.map((post) =>
           <div key={post.id} style={{   border: '1px solid #eaeaea',
             borderRadius: '10px' , maxWidth : '500px' , marginBottom : '20px'}} >
             <Link href={`/posts/${post.id}`}>
@@ -50,4 +52,18 @@ export default function Home() {
       </div>
     </div>
   )
+
+}
+
+
+
+export const  getStaticProps = async (context) => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
+  const articles = await res.json();
+
+  return{
+    props : {
+      articles
+    }
+  }
 }
