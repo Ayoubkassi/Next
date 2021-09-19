@@ -7,7 +7,7 @@ export const Navbar = () => {
   }}>
       <h4><a href="/">Home</a></h4>
       <h4><a href="/about">About</a></h4>
-      <h4>Services</h4>
+      <h4><a href="/posts">Posts</a></h4>
       <h4>Contact</h4>
     </div>
   );
