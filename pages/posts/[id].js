@@ -31,7 +31,7 @@ const Post = () => {
       <p>Post: { id }</p>
       <h3>{ post.title }</h3>
       <p style={{ lineHeight : '1.6' , fontSize : '18px' , padding : '0 15px' }}> { post.body } </p>
-      <img src={`https://picsum.photos/seed/picsum/200/300`} />
+      <img src={`https://picsum.photos/200`} />
     </>
 
   )
