@@ -58,6 +58,7 @@ export default function Home({ articles }) {
 
 
 export const  getStaticProps = async (context) => {
+  try{
   const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
   const articles = await res.json();
 
@@ -66,4 +67,12 @@ export const  getStaticProps = async (context) => {
       articles
     }
   }
+}catch(err){
+  console.log(err);
+  return {
+    props : {
+      articles : false
+    }
+  }
+}
 }
